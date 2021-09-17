@@ -37,7 +37,8 @@ export const AvailableMeals = () => {
 
     useEffect(() => {
         const fetchMeals = async () => {
-            const response = await fetch('https://mealplanner-9e0bb-default-rtdb.firebaseio.com/meals.json')
+            // Replace your firebase realtime database url instead of URL in below line
+            const response = await fetch('URL/meals.json')
             const responseData = await response.json();
 
             const loadedMeals = [];
