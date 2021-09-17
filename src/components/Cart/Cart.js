@@ -28,7 +28,8 @@ export const Cart = (props) => {
 
     const submitOrderHandler = async (userData) => {
         setIsSubmitting(true);
-        const response = await fetch('https://mealplanner-9e0bb-default-rtdb.firebaseio.com/orders.json', {
+        // Replace URL with your firebase database url in below line
+        const response = await fetch('URL/orders.json', {
             method: 'POST',
             body: JSON.stringify({
                 user: userData,
