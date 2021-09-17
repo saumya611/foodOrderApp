@@ -83,4 +83,12 @@ export const AvailableMeals = () => {
 
     return (
         <section className={classes.meals}>
-            
+            <Card>
+                <ul>
+                    {mealsList}
+                </ul>
+            </Card>
+
+        </section>
+    );
+}

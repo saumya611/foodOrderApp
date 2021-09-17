@@ -36,6 +36,10 @@ export const Cart = (props) => {
             })
         });
 
+        if(!response.ok){
+            console.log("Something Went Wrong in input data")
+        }
+
         setIsSubmitting(false);
         setDidSubmit(true);
         cartCtx.clearCart();
