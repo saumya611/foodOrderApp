@@ -43,7 +43,7 @@ const Checkout = (props) => {
             enteredStreetIsValid &&
             enteredCityIsValid;
 
-        if(!formIsValid){
+        if (!formIsValid) {
             return;
         }
 
@@ -61,29 +61,32 @@ const Checkout = (props) => {
     const postalControlClasses = `${classes.control} ${formInputsValidity.postalCode ? '' : classes.invalid}`
 
     return (
-        <form onSubmit={confirmHandler}>
-            <div className={nameControlClasses}>
+        <form className={classes.form} onSubmit={confirmHandler}>
+            <div className={classes.control}>
                 <label htmlFor="name">Your Name</label>
                 <input type="text" id="name" ref={nameInputRef} />
                 {!formInputsValidity.name && <p>Please enter a valid name!</p>}
             </div>
-            <div className={streetControlClasses}>
+            <div className={classes.control}>
                 <label htmlFor="street">Street</label>
                 <input type="text" id="street" ref={streetInputRef} />
                 {!formInputsValidity.street && <p>Please enter a valid street!</p>}
             </div>
-            <div className={postalControlClasses}>
+            <div className={classes.control}>
                 <label htmlFor="postal">Postal Code</label>
                 <input type="text" id="postal" ref={postalInputRef} />
                 {!formInputsValidity.postalCode && <p>Please enter a valid Postal Code!</p>}
             </div>
-            <div className={cityControlClasses}>
+            <div className={classes.control}>
                 <label htmlFor="city">City</label>
                 <input type="text" id="city" ref={cityInputRef} />
                 {!formInputsValidity.city && <p>Please enter a valid City!</p>}
             </div>
-            <button type="button" onClick={props.onCancel} className={classes.button}>Cancel</button>
-            <button type="submit" className={classes.button}>Confirm</button>
+            <div className={classes.actions}>
+                <button type="button" onClick={props.onCancel} className={classes.button}>Cancel</button>
+                <button type="submit" className={classes.button}>Confirm</button>
+            </div>
+
         </form>
     )
 }
